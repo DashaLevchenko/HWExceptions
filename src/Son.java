@@ -5,8 +5,8 @@ import exceptions.VirtualKeyboardException;
  * Son sens message by messenger in his phone
  */
 public class Son extends Father {
-    private boolean messengerWasUpdated = false;
-    private boolean virtualKeyboardWasUpdated = false;
+    private boolean messengerWasUpdated = true;
+    private boolean virtualKeyboardWasUpdated = true;
 
     @Override
     public void sendLetter() {
@@ -21,10 +21,10 @@ public class Son extends Father {
     @Override
     public void writeLetter() throws MessengerException, VirtualKeyboardException {
         if(!messengerWasUpdated){
-            throw new MessengerException("You have old version of messenger, you need to update it");
+            throw new MessengerException("You have old version of messenger, you need to update it!");
         }
         if(!virtualKeyboardWasUpdated){
-            throw new VirtualKeyboardException("You have old version of keyboard, you need to update it");
+            throw new VirtualKeyboardException("You have old version of keyboard, you need to update it!");
         }
     }
 

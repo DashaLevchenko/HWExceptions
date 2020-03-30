@@ -5,9 +5,8 @@ import exceptions.PenException;
  * Grandfather send paper mail by POST
  */
 public class GrandFather {
-    private boolean hasPen = false;
-    private boolean hasPaper = false;
-
+    private boolean hasPen = true;
+    private boolean hasPaper = true;
 
     public void sendLetter() {
         try {
@@ -21,7 +20,7 @@ public class GrandFather {
 
     public void writeLetter() throws PaperException, PenException {
         if (!hasPaper) {
-            throw new PaperException("You haven't got paper!");
+            throw new PaperException("You haven't got paper!You need to buy paper!");
         }
         if (!hasPen) {
             throw new PenException("Your pen haven't got ink!Buy new pen");
