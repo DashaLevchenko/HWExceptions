@@ -11,10 +11,11 @@ public class Son extends Father {
     @Override
     public void sendLetter() {
         try {
+            logger.info("Son want to write a message to his friend");
             writeLetter();
             pushSendButton();
         } catch (MessengerException | VirtualKeyboardException e) {
-            System.out.println(e.getMessage());
+            logger.error(e);
         }
     }
 

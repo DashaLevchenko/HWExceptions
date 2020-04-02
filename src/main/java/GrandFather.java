@@ -1,5 +1,7 @@
 import exceptions.PaperException;
 import exceptions.PenException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Grandfather send paper mail by POST
@@ -7,15 +9,17 @@ import exceptions.PenException;
 public class GrandFather {
     private boolean hasPen = true;
     private boolean hasPaper = true;
+    protected static final Logger logger = LogManager.getLogger(GrandFather.class.getName());
+
 
     public void sendLetter() {
         try {
+            logger.info("Grandfather want to write a letter to his friend which live in another city");
             writeLetter();
             goToThePost();
         } catch (PenException | PaperException e) {
-            System.out.println(e.getMessage());
+            logger.error(e);
         }
-
     }
 
     public void writeLetter() throws PaperException, PenException {

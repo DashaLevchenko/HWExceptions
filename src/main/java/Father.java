@@ -11,10 +11,11 @@ public class Father extends GrandFather {
     @Override
     public void sendLetter() {
         try {
+            logger.info("Father want to write an email to his classmate");
             writeLetter();
             pushSendButton();
         } catch (EmailException | KeyboardException e) {
-            System.out.println(e.getMessage());
+            logger.error(e);
         }
     }
 
