@@ -23,6 +23,7 @@ public class GrandFather {
     }
 
     public void writeLetter() throws PaperException, PenException {
+        logger.warn("When grandfather wants to write a letter, he must have a pen and paper");
         if (!hasPaper) {
             throw new PaperException("You haven't got paper!You need to buy paper!");
         }
@@ -30,6 +31,7 @@ public class GrandFather {
             throw new PenException("Your pen haven't got ink!Buy new pen");
         }
     }
+
     public void setHasPen(boolean hasPen) {
         this.hasPen = hasPen;
     }

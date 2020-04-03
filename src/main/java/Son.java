@@ -21,6 +21,7 @@ public class Son extends Father {
 
     @Override
     public void writeLetter() throws MessengerException, VirtualKeyboardException {
+        logger.warn("When son wants to write a message, he must have actual version of messenger and virtual keyboard");
         if(!messengerWasUpdated){
             throw new MessengerException("You have old version of messenger, you need to update it!");
         }

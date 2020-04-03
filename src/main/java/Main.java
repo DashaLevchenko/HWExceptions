@@ -1,4 +1,7 @@
+import java.util.HashMap;
+
 public class Main {
+
     public static void main(String[] args) {
         GrandFather grandFather = new GrandFather();
         grandFather.setHasPaper(false);

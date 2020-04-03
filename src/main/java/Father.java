@@ -25,6 +25,7 @@ public class Father extends GrandFather {
 
     @Override
     public void writeLetter() throws EmailException, KeyboardException {
+        logger.warn("When father wants to write an email, he must have an account and keyboard connection");
         if(!hasEmailAccount){
             throw new EmailException("You need to create an account!");
         }
